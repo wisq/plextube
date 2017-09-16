@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "X-Plex-Token": "token from config",
+        "X-Plex-Client-Identifier": "wisq-plextube",
+        "X-Plex-Product": "plextube",
+        "X-Plex-Version": "0.1.0",
+        "Accept": "application/json"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "http://127.0.0.1:32400/library/sections"
+    },
+    "response": {
+      "body": "{\"MediaContainer\":{\"size\":8,\"allowSync\":false,\"identifier\":\"com.plexapp.plugins.library\",\"mediaTagPrefix\":\"/system/bundle/media/flags/\",\"mediaTagVersion\":1504826804,\"title1\":\"Plex Library\",\"Directory\":[{\"allowSync\":true,\"art\":\"/:/resources/artist-fanart.jpg\",\"composite\":\"/library/sections/7/composite/1505594483\",\"filters\":true,\"refreshing\":false,\"thumb\":\"/:/resources/artist.png\",\"key\":\"7\",\"type\":\"artist\",\"title\":\"Friend's Music\",\"agent\":\"com.plexapp.agents.plexmusic\",\"scanner\":\"Plex Premium Music Scanner\",\"language\":\"en\",\"uuid\":\"687f1bfc-a3bd-4179-8011-32443fab3b8d\",\"updatedAt\":1491672124,\"createdAt\":1491672124,\"Location\":[{\"id\":11,\"path\":\"/disk/1/plex/friend\"}]},{\"allowSync\":true,\"art\":\"/:/resources/artist-fanart.jpg\",\"composite\":\"/library/sections/12/composite/1505594494\",\"filters\":true,\"refreshing\":false,\"thumb\":\"/:/resources/artist.png\",\"key\":\"12\",\"type\":\"artist\",\"title\":\"Classical\",\"agent\":\"com.plexapp.agents.plexmusic\",\"scanner\":\"Plex Premium Music Scanner\",\"language\":\"en\",\"uuid\":\"568dd144-ddfb-4f58-b794-4461feb2fe49\",\"updatedAt\":1501295034,\"createdAt\":1501295034,\"Location\":[{\"id\":17,\"path\":\"/disk/1/plex/classical\"}]},{\"allowSync\":true,\"art\":\"/:/resources/movie-fanart.jpg\",\"composite\":\"/library/sections/1/composite/1505597053\",\"filters\":true,\"refreshing\":false,\"thumb\":\"/:/resources/movie.png\",\"key\":\"1\",\"type\":\"movie\",\"title\":\"Movies\",\"agent\":\"com.plexapp.agents.imdb\",\"scanner\":\"Plex Movie Scanner\",\"language\":\"en\",\"uuid\":\"09735826-f972-4e02-992e-c2ad5ba67005\",\"updatedAt\":1505356590,\"createdAt\":1480116513,\"Location\":[{\"id\":1,\"path\":\"/disk/1/plex/movies\"},{\"id\":8,\"path\":\"/disk/2/plex/movies\"},{\"id\":19,\"path\":\"/disk/3/plex/movies\"}]},{\"allowSync\":true,\"art\":\"/:/resources/artist-fanart.jpg\",\"composite\":\"/library/sections/4/composite/1505594495\",\"filters\":true,\"refreshing\":false,\"thumb\":\"/:/resources/artist.png\",\"key\":\"4\",\"type\":\"artist\",\"title\":\"Music\",\"agent\":\"com.plexapp.agents.plexmusic\",\"scanner\":\"Plex Premium Music Scanner\",\"language\":\"en\",\"uuid\":\"6e500e13-114e-4af1-8416-a7adc02531a9\",\"updatedAt\":1501026532,\"createdAt\":1482222389,\"Location\":[{\"id\":6,\"path\":\"/disk/1/plex/music\"},{\"id\":12,\"path\":\"/disk/2/plex/music\"}]},{\"allowSync\":true,\"art\":\"/:/resources/artist-fanart.jpg\",\"composite\":\"/library/sections/3/composite/1505594496\",\"filters\":true,\"refreshing\":false,\"thumb\":\"/:/resources/artist.png\",\"key\":\"3\",\"type\":\"artist\",\"title\":\"Radio\",\"agent\":\"com.plexapp.agents.plexmusic\",\"scanner\":\"Plex Premium Music Scanner\",\"language\":\"en\",\"uuid\":\"eb39e037-ad87-4603-8fbb-9aebeac7d62b\",\"updatedAt\":1482218174,\"createdAt\":1482218174,\"Location\":[{\"id\":5,\"path\":\"/disk/1/plex/radio\"}]},{\"allowSync\":true,\"art\":\"/:/resources/show-fanart.jpg\",\"composite\":\"/library/sections/2/composite/1505594496\",\"filters\":true,\"refreshing\":false,\"thumb\":\"/:/resources/show.png\",\"key\":\"2\",\"type\":\"show\",\"title\":\"TV Shows\",\"agent\":\"com.plexapp.agents.thetvdb\",\"scanner\":\"Plex Series Scanner\",\"language\":\"en\",\"uuid\":\"bbbe5889-c316-4144-943f-f001b2b260b1\",\"updatedAt\":1504383423,\"createdAt\":1480116547,\"Location\":[{\"id\":2,\"path\":\"/disk/1/plex/shows\"},{\"id\":7,\"path\":\"/disk/2/plex/shows\"},{\"id\":18,\"path\":\"/disk/3/plex/shows\"}]},{\"allowSync\":true,\"art\":\"/:/resources/show-fanart.jpg\",\"composite\":\"/library/sections/6/composite/1505594497\",\"filters\":true,\"refreshing\":false,\"thumb\":\"/:/resources/show.png\",\"key\":\"6\",\"type\":\"show\",\"title\":\"Web Shows\",\"agent\":\"com.plexapp.agents.thetvdb\",\"scanner\":\"Plex Series Scanner\",\"language\":\"en\",\"uuid\":\"2d6d8a18-8122-4727-b965-f406d38a01cb\",\"updatedAt\":1491176529,\"createdAt\":1491176529,\"Location\":[{\"id\":10,\"path\":\"/disk/1/plex/webshows\"}]},{\"allowSync\":true,\"art\":\"/:/resources/movie-fanart.jpg\",\"composite\":\"/library/sections/13/composite/1505597530\",\"filters\":true,\"refreshing\":false,\"thumb\":\"/:/resources/movie.png\",\"key\":\"13\",\"type\":\"movie\",\"title\":\"YouTube\",\"agent\":\"com.plexapp.agents.youtube\",\"scanner\":\"Plex Video Files Scanner\",\"language\":\"xn\",\"uuid\":\"c563227a-9ddb-446c-bb27-cd0ee851b574\",\"updatedAt\":1505589786,\"createdAt\":1505537658,\"Location\":[{\"id\":20,\"path\":\"/disk/1/plex/youtube\"}]}]}}",
+      "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "4055",
+        "Connection": "Keep-Alive",
+        "Keep-Alive": "timeout=20",
+        "X-Plex-Protocol": "1.0",
+        "Cache-Control": "no-cache",
+        "Date": "Sat, 16 Sep 2017 22:15:26 GMT"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

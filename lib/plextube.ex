@@ -1,18 +1,5 @@
 defmodule Plextube do
-  @moduledoc """
-  Documentation for Plextube.
-  """
+  @version Mix.Project.config[:version]
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Plextube.hello
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  def version, do: @version
 end

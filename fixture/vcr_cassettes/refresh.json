@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "X-Plex-Token": "token from config",
+        "X-Plex-Client-Identifier": "wisq-plextube",
+        "X-Plex-Product": "plextube",
+        "X-Plex-Version": "0.1.0",
+        "Accept": "application/json"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "http://127.0.0.1:32400/library/sections/13/refresh"
+    },
+    "response": {
+      "body": "",
+      "headers": {
+        "Content-Length": "0",
+        "Content-Type": "text/html",
+        "Connection": "Keep-Alive",
+        "Keep-Alive": "timeout=20",
+        "X-Plex-Protocol": "1.0",
+        "Cache-Control": "no-cache",
+        "Date": "Sat, 16 Sep 2017 23:48:35 GMT"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
