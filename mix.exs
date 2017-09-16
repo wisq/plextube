@@ -26,6 +26,7 @@ defmodule Plextube.Mixfile do
       {:httpoison, "~> 0.13"},
       {:poison, "~> 3.1"},
       {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
+      {:exvcr, "~> 0.8", runtime: false},
     ]
   end
 end
