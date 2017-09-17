@@ -1,4 +1,5 @@
-%{"certifi": {:hex, :certifi, "2.0.0", "a0c0e475107135f76b8c1d5bc7efb33cd3815cb3cf3dea7aefdd174dabead064", [], [], "hexpm"},
+%{"briefly": {:hex, :briefly, "0.3.0", "16e6b76d2070ebc9cbd025fa85cf5dbaf52368c4bd896fb482b5a6b95a540c2f", [], [], "hexpm"},
+  "certifi": {:hex, :certifi, "2.0.0", "a0c0e475107135f76b8c1d5bc7efb33cd3815cb3cf3dea7aefdd174dabead064", [], [], "hexpm"},
   "exactor": {:hex, :exactor, "2.2.3", "a6972f43bb6160afeb73e1d8ab45ba604cd0ac8b5244c557093f6e92ce582786", [], [], "hexpm"},
   "exjsx": {:hex, :exjsx, "4.0.0", "60548841e0212df401e38e63c0078ec57b33e7ea49b032c796ccad8cde794b5c", [], [{:jsx, "~> 2.8.0", [hex: :jsx, repo: "hexpm", optional: false]}], "hexpm"},
   "exvcr": {:hex, :exvcr, "0.9.0", "cd092e93b8de9931259ae9c0dc7533ed407bd92ca668c0b4f488ba8c5c3dfe9e", [], [{:exactor, "~> 2.2", [hex: :exactor, repo: "hexpm", optional: false]}, {:exjsx, "~> 4.0", [hex: :exjsx, repo: "hexpm", optional: false]}, {:httpoison, "~> 0.13", [hex: :httpoison, repo: "hexpm", optional: true]}, {:httpotion, "~> 3.0", [hex: :httpotion, repo: "hexpm", optional: true]}, {:ibrowse, "~> 4.4", [hex: :ibrowse, repo: "hexpm", optional: true]}, {:meck, "~> 0.8.3", [hex: :meck, repo: "hexpm", optional: false]}], "hexpm"},
