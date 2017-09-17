@@ -69,7 +69,25 @@ The above method should be enough to get you going.  However, if you're an exper
 
 This is a more complex topic, and is covered in [a separate document](docs/deploying.md).
 
-## OH GOD WHAT IS THIS
+## iOS integration
+
+So how do you easily get videos into PlexTube?  The "Workflow" app for iOS holds the answer.
+
+Included in the [`ios` directory](ios/) are workflows that can be used to send YouTube video URLs to PlexTube:
+
+* [Watch in PlexTube](ios/Watch%20in%20PlexTube.wflow): Downloads a video and launches Plex.
+  * Will wait until the video is downloaded, but Plex may take a moment to add the video, and you may need to back out and refresh.
+  * May time out when downloading longer videos, or on slow connections.
+* [Queue in PlexTube](ios/Queue%20in%20PlexTube.wflow): Downloads a video in the background.
+  * Only takes as long as it needs to process the video ID and get ready to download.
+  * It's not really "queuing" anything, since all videos are downloaded simultaneously.  But "send to" is too generic and "cast to" means something different, so, "queue" it is.
+* I'm hoping to eventually make a third action that will launch a webpage with progress bars, and then take you to Plex when done.
+
+To get them into Workflow, just navigate here with your iOS device and download the files.  You may also be able to load them other ways, such as copying them to iCloud Drive, emailing them to yourself, etc.
+
+Once loaded into Workflow, edit the URL to point it to your Plex server, and edit the secret if needed.
+
+## OH GOD WHAT IS ALL THIS
 
 If all of the above is way too complicated for you, then consider installing [YouTubeTV](https://github.com/kolsys/YouTubeTV.bundle) instead.  Instead of downloading videos, it adds a YouTube channel to your Plex server.
 
