@@ -10,7 +10,7 @@ defmodule Plextube.Web do
   plug :dispatch
 
   post "/call" do
-    %{"url" => url} = conn.body_params
+    url = conn.body_params["url"]
 
     case parse_youtube_url(url) do
       {:ok, video_id} ->
@@ -31,6 +31,7 @@ defmodule Plextube.Web do
     send_json(conn, 404, error: "Not found")
   end
 
+  defp parse_youtube_url(nil), do: {:nomatch, "No URL supplied."}
   defp parse_youtube_url(url) do
     URI.parse(url)
     |> parse_youtube_uri
