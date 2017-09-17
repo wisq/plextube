@@ -44,4 +44,44 @@ defmodule Plextube.WebTest do
     assert body["video_id"] == "rickroll"
     assert body["file"] == "Rick Astley - Never Gonna Give You Up [dQw4w9WgXcQ].mkv"
   end
+
+  test "POST to /cast retrieves video asynchronously" do
+    {:ok, library} = Briefly.create(directory: true)
+    Application.put_env(:plextube, :library_path, library)
+    Plextube.DownloadTest.set_ytdl("rickroll")
+
+    me = self()
+    mock_plex = [
+      section_for_path: fn p ->
+        assert File.dir?(p)
+        assert p |> String.contains?("briefly")
+        %{"key" => "321"}
+      end,
+      scan_section: fn "321" ->
+        send(me, :scanned)
+        :ok
+      end,
+    ]
+
+    # Create a test connection
+    conn = conn(:post, "/cast", url: "https://youtube.com/watch?v=rickroll")
+
+    # Invoke the plug
+    with_mock Plextube.Plex, mock_plex do
+      conn = Web.call(conn, @opts)
+
+      # Assert the response and status
+      assert conn.state == :sent
+      refute_received(:scanned) # hopefully it's not so fast that it fails this
+      assert conn.status == 200
+      assert %{"content-type" => "application/json"} = conn.resp_headers |> Map.new
+
+      body = conn.resp_body |> Poison.decode!
+      assert body["success"] == true
+      assert body["video_id"] == "rickroll"
+      assert body["file"] == nil
+
+      assert_receive(:scanned)
+    end
+  end
 end
