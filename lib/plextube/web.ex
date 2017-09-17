@@ -10,25 +10,27 @@ defmodule Plextube.Web do
   plug :dispatch
 
   post "/call" do
-    url = conn.body_params["url"]
-
-    case parse_youtube_url(url) do
-      {:ok, video_id} ->
-        video_file = download_and_add(video_id)
-        send_json(conn, 200, id: video_id, file: video_file)
-
-      {:nomatch, msg} ->
-        send_json(conn, 404, error: msg)
-    end
+    process(conn, fn video_id -> 
+      video_file = download_and_add(video_id)
+      [file: video_file]
+    end)
   end
 
+
   post "/cast" do
+    process(conn, fn video_id -> 
+      Process.spawn(fn -> download_and_add(video_id) end, [])
+      []
+    end)
+  end
+
+  defp process(conn, fun) do
     url = conn.body_params["url"]
 
     case parse_youtube_url(url) do
       {:ok, video_id} ->
-        Process.spawn(fn -> download_and_add(video_id) end, [])
-        send_json(conn, 200, id: video_id)
+        result = fun.(video_id)
+        send_json(conn, 200, [{:video_id, video_id} | result])
 
       {:nomatch, msg} ->
         send_json(conn, 404, error: msg)
