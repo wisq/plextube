@@ -1,5 +1,6 @@
 #!/bin/sh
 
+target="$1"
 . fixture/ytdl/dump_args.sh
 
 # Captured in IEx using
@@ -70,5 +71,6 @@
 /bin/echo -e -n "\r\e[K[download] 100.0% of 3.33MiB at 24.11MiB/s ETA 00:00"
 /bin/echo -e -n "\r\e[K[download] 100% of 3.33MiB in 00:00\n"
 /bin/echo -e -n "[ffmpeg] Merging formats into \"Rick Astley - Never Gonna Give You Up [dQw4w9WgXcQ].mkv\"\n"
+touch "$target/Rick Astley - Never Gonna Give You Up [dQw4w9WgXcQ].mkv"
 /bin/echo -e -n "Deleting original file Rick Astley - Never Gonna Give You Up [dQw4w9WgXcQ].f137.mp4 (pass -k to keep)\n"
 /bin/echo -e -n "Deleting original file Rick Astley - Never Gonna Give You Up [dQw4w9WgXcQ].f251.webm (pass -k to keep)\n"

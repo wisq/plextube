@@ -32,6 +32,7 @@ defmodule Plextube.Mixfile do
       {:cowboy, "~> 1.0.0"},
       {:plug, "~> 1.0"},
       {:porcelain, "~> 2.0"},
+      {:mock, "~> 0.2.0", only: :test},
 
       # Fix https://github.com/bitwalker/distillery/issues/321
       {:distillery, git: "https://github.com/bitwalker/distillery.git",

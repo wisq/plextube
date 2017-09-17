@@ -1,8 +1,8 @@
-dump="$1"
+args_dir="$1"
 
 (
 	while [ "$#" -gt 0 ]; do
 		echo "$1"
 		shift
 	done
-) > "$dump"
+) > "$args_dir/args"

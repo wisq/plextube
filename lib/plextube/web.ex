@@ -39,7 +39,9 @@ defmodule Plextube.Web do
 
   defp send_json(conn, code, data) do
     data = [{:success, code == 200} | data]
-    send_resp(conn, code, data |> Map.new |> Poison.encode!)
+    conn
+    |> put_resp_header("content-type", "application/json")
+    |> send_resp(code, data |> Map.new |> Poison.encode!)
   end
 
   match _ do

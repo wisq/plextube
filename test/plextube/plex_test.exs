@@ -7,7 +7,6 @@ defmodule Plextube.PlexTest do
 
   setup_all do
     Application.put_env(:plextube, :plex_token, "token from config")
-    :ok
   end
 
   test "headers include important fields" do

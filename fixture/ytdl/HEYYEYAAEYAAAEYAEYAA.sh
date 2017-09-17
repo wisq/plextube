@@ -1,5 +1,6 @@
 #!/bin/sh
 
+target="$1"
 . fixture/ytdl/dump_args.sh
 
 # See rickroll.sh for capture details.
@@ -37,5 +38,6 @@
 /bin/echo -e -n "\r\e[K[download] 100.0% of 1.90MiB at 14.40MiB/s ETA 00:00"
 /bin/echo -e -n "\r\e[K[download] 100% of 1.90MiB in 00:00\n"
 /bin/echo -e -n "[ffmpeg] Merging formats into \"HEYYEYAAEYAAAEYAEYAA [ZZ5LpwO-An4].mkv\"\n"
+touch "$target/HEYYEYAAEYAAAEYAEYAA [ZZ5LpwO-An4].mkv"
 /bin/echo -e -n "Deleting original file HEYYEYAAEYAAAEYAEYAA [ZZ5LpwO-An4].f134.mp4 (pass -k to keep)\n"
 /bin/echo -e -n "Deleting original file HEYYEYAAEYAAAEYAEYAA [ZZ5LpwO-An4].f251.webm (pass -k to keep)\n"
