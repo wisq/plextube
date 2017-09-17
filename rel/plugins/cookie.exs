@@ -1,3 +1,7 @@
+# Kinda ugly, but this is the best way I can provide a
+# reasonable configuration example without either exposing
+# my cookies, and/or having everyone use the same ones.
+
 defmodule Cookie do
   def get(env) do
     file = ".cookie.#{env}"

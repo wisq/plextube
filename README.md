@@ -70,8 +70,9 @@ This should be enough to get you going.  However, if you're an experienced Elixi
 Deploying PlexTube (via Distillery) offers a few extra benefits:
 
 * You can run it as a different user, and/or on a different host.
-* The target host need not have Elixir or Erlang installed.
 * You can do running restarts, without restarting the Erlang VM.
+* The target host need not have Elixir or Erlang installed.
+  * … as long as the host you're building has the same OS, architecture, and library versions.
 
 To get these benefits, however, you'll need to do some extra steps.
 
@@ -79,6 +80,7 @@ First, we need a few more files:
 
 * `config/prod.exs`: Your production config.  If you want the same config in your local development and deployed versions, then just copy `dev.exs` to `prod.exs`.  Otherwise, copy `plextube.exs` and edit the config as needed.
 * `rel/config.exs`: Your release config.  Copy this from `rel/config.example.exs` and edit as needed (see below).
+  * If `include_erts` is `true`, then (in theory) the deploy is self-contained and doesn't need Erlang/Elixir.  However, you'll need very similar OS, architecture, and library versions to make this work.
 * (optional) `Makefile`: Makes deploying easier.  Copy `Makefile.example`, (optionally) rename one of the `deploy_*` targets to just `deploy`, and delete the rest.
 
 Now, either run `make deploy` (if you did all of the above), or check the `Makefile.example` to see how you might do a deploy yourself.  (Since this is your first deploy, it's normal to see the "not responding to pings" error — you haven't started it yet.)
