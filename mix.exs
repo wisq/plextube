@@ -14,6 +14,7 @@ defmodule Plextube.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {Plextube, []},
       extra_applications: [:logger]
     ]
   end
