@@ -12,7 +12,6 @@ defmodule Mix.Tasks.Plextube.Server do
     run([])
   end
   def run([]) do
-    Application.put_env(:plextube, :web_enabled, true)
     Mix.Tasks.Run.run(["--no-halt"])
   end
 

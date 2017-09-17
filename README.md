@@ -22,5 +22,5 @@ In order to download videos, you'll need [`youtube-dl`](https://rg3.github.io/yo
 
 1. Ensure dependencies are installed; see above.
 2. Run `mix plex.token <your plex username> <your plex password>` to authenticate with Plex and get a token.
-3. Edit `config/config.example.exs`, add your Plex token and library path, and save it as `config/config.exs`.  
+3. Edit `config/plextube.example.exs`, add your Plex token and library path, and save it as `config/plextube.exs`.
 4. (TODO)

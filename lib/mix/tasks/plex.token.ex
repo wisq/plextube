@@ -22,7 +22,7 @@ defmodule Mix.Tasks.Plex.Token do
 
     IO.puts "Authentication successful!  Your token: #{inspect(token)}"
     IO.puts ""
-    IO.puts "Put this token in your config/config.exs:"
+    IO.puts "Put this token in your config/pipedrive.exs:"
     IO.puts ""
     IO.puts "  config :plextube,"
     IO.puts "    plex_token: #{inspect(token)}"

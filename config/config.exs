@@ -4,6 +4,4 @@ use Mix.Config
 config :porcelain,
   driver: Porcelain.Driver.Basic
 
-if Mix.env != "test" && File.exists?("config/plextube.exs") do
-  import_config "plextube.exs"
-end
+import_config "#{Mix.env}.exs"

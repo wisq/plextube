@@ -22,7 +22,11 @@ defmodule Plextube do
   end
 
   defp web_enabled? do
-    Application.get_env(:plextube, :web_enabled, false)
+    !iex_running?() && Application.get_env(:plextube, :web_enabled, true)
+  end
+
+  defp iex_running? do
+    Code.ensure_loaded?(IEx) and IEx.started?
   end
 
   defp web_options do

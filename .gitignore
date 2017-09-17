@@ -24,4 +24,5 @@ erl_crash.dump
 
 # Ignore release stuff for now.
 /rel/
+/config/prod.exs
 Makefile
