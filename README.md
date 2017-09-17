@@ -14,8 +14,13 @@ Other apps like Jonas Gessner's amazing ProTube attempted to remedy this.  But r
 
 PlexTube is my way of continuing to avoid using the YouTube iOS app.  It's not the most convenient way to watch YouTube, and my motivations may be petty as heck, and they may come for PlexTube next — but damned if I'm going to use their shitty app.
 
+## Dependencies
+
+In order to download videos, you'll need [`youtube-dl`](https://rg3.github.io/youtube-dl/).  PlexTube is pretty useless without it.
+
 ## Installation
 
-1. Run `mix plex.token <your plex username> <your plex password>` to authenticate with Plex and get a token.
-2. Edit `config/config.example.exs`, add your Plex token, and save it as `config/config.exs`.  
-3. (TODO)
+1. Ensure dependencies are installed; see above.
+2. Run `mix plex.token <your plex username> <your plex password>` to authenticate with Plex and get a token.
+3. Edit `config/config.example.exs`, add your Plex token and library path, and save it as `config/config.exs`.  
+4. (TODO)
