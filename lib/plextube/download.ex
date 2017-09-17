@@ -19,7 +19,8 @@ defmodule Plextube.Download do
   ]
 
   defp wrapper_path do
-    Application.app_dir(:plextube, "priv/youtube-dl.sh")
+    Application.get_env(:plextube, :ytdl_wrapper,
+      Application.app_dir(:plextube, "priv/youtube-dl.sh"))
   end
 
   def video_url(v_id), do: "https://www.youtube.com/watch?v=#{v_id}"
