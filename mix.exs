@@ -28,6 +28,8 @@ defmodule Plextube.Mixfile do
       {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
       {:exvcr, "~> 0.8", runtime: false},
       {:briefly, "~> 0.3"},
+      {:cowboy, "~> 1.0.0"},
+      {:plug, "~> 1.0"},
     ]
   end
 end
