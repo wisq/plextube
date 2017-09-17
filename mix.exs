@@ -31,6 +31,7 @@ defmodule Plextube.Mixfile do
       {:briefly, "~> 0.3"},
       {:cowboy, "~> 1.0.0"},
       {:plug, "~> 1.0"},
+      {:porcelain, "~> 2.0"},
     ]
   end
 end
