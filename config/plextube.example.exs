@@ -7,7 +7,7 @@ use Mix.Config
 # and replace YOUR-TOKEN with the token it gives you.
 
 config :plextube,
-  plex_token: "YOUR-TOKEN"
+  plex_token: "YOUR-TOKEN",
   library_path: "/path/to/write/videos/to"
 
 # Other options and their defaults:

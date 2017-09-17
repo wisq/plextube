@@ -32,7 +32,7 @@ defmodule Plextube.Plex do
 
   defp plex_token do
     token = Application.get_env(:plextube, :plex_token)
-    if is_nil(token) || token == "YOUR-TOKEN", do: raise "Must set :plex_token in config/config.exs"
+    if is_nil(token) || token == "YOUR-TOKEN", do: raise "Must set :plex_token in config/plextube.exs"
     token
   end
 
