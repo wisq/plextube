@@ -94,3 +94,9 @@ If all of the above is way too complicated for you, then consider installing [Yo
 (Heck, you should install it either way — I use YouTubeTV for my subscriptions, and PlexTube for other videos.)
 
 Once installed, you can sign in as your YouTube account, view your subscriptions / history / etc., and enjoy all the benefits of Plex (except offline viewing).  However, I believe only the server owner can use this — so while other users won't see your history etc., you also can't easily share videos with them.
+
+## Legal stuff
+
+Copyright © 2017, Adrian Irving-Beer.
+
+PlexTube is released under the [Apache 2 License](LICENSE) and is provided with **no warranty**.  Remember, you're deploying a web service that runs commands on your precious Plex server.  I make every effort to write secure code, but you're still using PlexTube at your own risk.
