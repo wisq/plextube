@@ -26,7 +26,7 @@ If you're installing the Debian/Ubuntu packages, make sure to include `erlang-de
 
 PlexTube was written in Elixir 1.5 running on Erlang 20.  You can try running it under older versions, but there's no guarantees it'll work.
 
-### `youtube-dl`
+### youtube-dl
 
 In order to download videos, you'll need [`youtube-dl`](https://rg3.github.io/youtube-dl/).  PlexTube is pretty useless without it.
 
