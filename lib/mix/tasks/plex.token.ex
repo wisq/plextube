@@ -30,6 +30,6 @@ defmodule Mix.Tasks.Plex.Token do
   end
 
   def run(_) do
-    Mix.raise "Usage: mix plextube.token <Plex username> <Plex password>"
+    Mix.raise "Usage: mix plex.token <Plex username> <Plex password>"
   end
 end
