@@ -4,24 +4,38 @@ defmodule Plextube.Web do
 
   alias Plextube.{Download, Plex}
 
+  defp library_path do
+    path = Application.get_env(:plextube, :library_path)
+    if is_nil(path) || path == "/path/to/write/videos/to", do: raise "Must set :library_path in config/plextube.exs"
+    path
+  end
+
+  defp web_secret, do: Application.get_env(:plextube, :secret)
+
   plug Plug.Logger
   plug :match
   plug Plug.Parsers, parsers: [:urlencoded]
   plug :dispatch
 
   post "/call" do
-    process(conn, fn video_id -> 
+    handle(conn, fn video_id -> 
       video_file = download_and_add(video_id)
       [file: video_file]
     end)
   end
 
-
   post "/cast" do
-    process(conn, fn video_id -> 
+    handle(conn, fn video_id -> 
       Process.spawn(fn -> download_and_add(video_id) end, [])
       []
     end)
+  end
+
+  defp handle(conn, fun) do
+    case check_secret(conn, web_secret()) do
+      :ok -> process(conn, fun)
+      :nope -> send_json(conn, 403, error: "Forbidden")
+    end
   end
 
   defp process(conn, fun) do
@@ -47,6 +61,10 @@ defmodule Plextube.Web do
   match _ do
     send_json(conn, 404, error: "Not found")
   end
+
+  defp check_secret(_, nil), do: :ok
+  defp check_secret(%{params: %{"secret" => secret}}, secret), do: :ok
+  defp check_secret(_, _), do: :nope
 
   defp parse_youtube_url(nil), do: {:nomatch, "No URL supplied."}
   defp parse_youtube_url(url) do
@@ -98,12 +116,6 @@ defmodule Plextube.Web do
     end
   end
 
-  defp library_path do
-    path = Application.get_env(:plextube, :library_path)
-    if is_nil(path) || path == "/path/to/write/videos/to", do: raise "Must set :library_path in config/plextube.exs"
-    path
-  end
-
   defp refresh_plex do
     path = library_path()
     path
@@ -111,8 +123,8 @@ defmodule Plextube.Web do
     |> scan_plex_section(path)
   end
 
-  def scan_plex_section(%{"key" => key}, _), do: Plex.scan_section(key)
-  def scan_plex_section(nil, path) do
+  defp scan_plex_section(%{"key" => key}, _), do: Plex.scan_section(key)
+  defp scan_plex_section(nil, path) do
     Logger.warn("Can't find a Plex library for #{inspect(path)}, refreshing all libraries.")
     Plex.scan_section("all")
   end
