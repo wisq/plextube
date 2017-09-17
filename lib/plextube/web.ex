@@ -22,6 +22,19 @@ defmodule Plextube.Web do
     end
   end
 
+  post "/cast" do
+    url = conn.body_params["url"]
+
+    case parse_youtube_url(url) do
+      {:ok, video_id} ->
+        Process.spawn(fn -> download_and_add(video_id) end, [])
+        send_json(conn, 200, id: video_id)
+
+      {:nomatch, msg} ->
+        send_json(conn, 404, error: msg)
+    end
+  end
+
   defp send_json(conn, code, data) do
     data = [{:success, code == 200} | data]
     send_resp(conn, code, data |> Map.new |> Poison.encode!)
