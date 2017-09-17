@@ -1,0 +1,15 @@
+all:
+
+local_sudo_deploy:
+	MIX_ENV=prod mix release --no-tar
+	sudo -u plextube rsync --delete -rt --exclude 'var/' \
+		_build/prod/rel/plextube/ \
+		/home/plextube/app/plextube/
+	sudo -u plextube /home/plextube/app/plextube/bin/plextube deploy_restart
+
+remote_ssh_deploy:
+	MIX_ENV=prod mix release --no-tar
+	rsync --delete -rt --exclude 'var/' \
+		_build/prod/rel/plextube/ \
+		plextube@SOME-HOST:app/plextube/
+	ssh plextube@SOME-HOST app/plextube/bin/plextube deploy_restart

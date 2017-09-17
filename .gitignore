@@ -21,8 +21,7 @@ erl_crash.dump
 
 # Ignore real config, user must copy example.
 /config/plextube.exs
-
-# Ignore release stuff for now.
-/rel/
 /config/prod.exs
+/rel/config.exs
 Makefile
+.cookie.*
