@@ -6,7 +6,7 @@ defmodule Plextube.Mixfile do
       app: :plextube,
       version: "0.1.0",
       elixir: "~> 1.5",
-      start_permanent: Mix.env == :prod,
+      start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
   end
@@ -33,10 +33,7 @@ defmodule Plextube.Mixfile do
       {:plug, "~> 1.0"},
       {:porcelain, "~> 2.0"},
       {:mock, "~> 0.2.0", only: :test},
-
-      # Fix https://github.com/bitwalker/distillery/issues/321
-      {:distillery, git: "https://github.com/bitwalker/distillery.git",
-        sha: "4c154e013a27d9f82d8cff147309674eb41e3db4", runtime: false},
+      {:distillery, "~> 2.0", runtime: false}
     ]
   end
 end
