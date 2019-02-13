@@ -33,4 +33,4 @@ If you're using a modern Linux distribution, chances are you're using `systemd` 
 
 If you're familiar with Distillery, you may be wondering what the heck I'm doing with these `rsync` commands.  Yes, I'm aware that the "proper" way to deploy is to let Distillery build a `.tar.gz` file (i.e. `mix release` without the `--no-tar`), copy that tarball to the deploy target, and let the target unpack it.
 
-However, that requires bumping the version every deploy, which is a bit of a pain.  Plus, it tends to work best with a dedciated build/CI host and a repository of release files, which I consider **massive** overkill for a hobby project like this.
+However, that requires bumping the version every deploy, which is a bit of a pain.  Plus, it tends to work best with a dedicated build/CI host and a repository of release files, which I consider **massive** overkill for a hobby project like this.
